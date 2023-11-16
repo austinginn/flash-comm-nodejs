@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "name": "flash-comm-client-node",
+  "version": "1.0.0",
+  "description": "nodejs flash-comm client",
+  "main": "client.mjs",
+  "scripts": {
+    "start": "node client.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Austin Ginn",
+  "license": "ISC",
+  "dependencies": {
+    "rpi-gpio": "^2.1.7",
+    "socket.io-client": "^4.7.2",
+    "uuid": "^9.0.1"
+  }
+}
