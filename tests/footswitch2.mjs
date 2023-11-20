@@ -9,7 +9,7 @@ let PIN = 17;
 // Check if there are arguments
 if (args.length === 0) {
     console.log('No arguments provided.');
-    let PIN = args[0];
+    PIN = args[0];
 } else {
     // Output the provided arguments
     console.log('Arguments:', args);
