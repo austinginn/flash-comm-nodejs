@@ -3,9 +3,9 @@ import gpio from "rpi-gpio";
 import { promisify } from "util";
 
 //Async gpio
-const setupAsync = promisify(gpio.setup());
-const writeAsync = promisify(gpio.write());
-const readAsync = promisify(gpio.read());
+const setupAsync = promisify(gpio.setup);
+const writeAsync = promisify(gpio.write);
+const readAsync = promisify(gpio.read);
 
 gpio.setMode(gpio.MODE_BCM);
 
