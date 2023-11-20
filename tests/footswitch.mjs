@@ -3,9 +3,9 @@ import gpio from "rpi-gpio";
 import { promisify } from "util";
 
 //Async gpio
-const setupAsync = promisify(gpio.setup);
-const writeAsync = promisify(gpio.write);
-const readAsync = promisify(gpio.read);
+const setupAsync = promisify(gpio.setup());
+const writeAsync = promisify(gpio.write());
+const readAsync = promisify(gpio.read());
 
 gpio.setMode(gpio.MODE_BCM);
 
@@ -26,7 +26,7 @@ gpio.on('change', async (channel, value) => {
 //initialize foot switch
 async function initFootSwitch() {
     try {
-        await setupAsync(17, gpio.DIR_IN, gpio.EDGE_BOTH);
+        await setupAsync(4, gpio.DIR_IN, gpio.EDGE_BOTH);
         console.log("GPIO: Foot switch initialized");
     } catch (error) {
         console.log("Error initializing foot switch");
