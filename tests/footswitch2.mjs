@@ -15,7 +15,7 @@ if (args.length === 0) {
 }
 
 
-const button = new Gpio(17, 'in', 'both');
+const button = new Gpio(PIN, 'in', 'both');
 
 button.watch((err, value) => {
     if (err) {
