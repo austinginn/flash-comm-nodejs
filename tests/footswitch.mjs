@@ -25,6 +25,7 @@ gpio.on('change', async (channel, value) => {
 //Untested
 //initialize foot switch
 async function initFootSwitch() {
+    console.log(gpio);
     try {
         await setupAsync(4, gpio.DIR_IN, gpio.EDGE_BOTH);
         console.log("GPIO: Foot switch initialized");
