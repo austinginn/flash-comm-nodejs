@@ -2,6 +2,11 @@
 import gpio from "rpi-gpio";
 import { promisify } from "util";
 
+
+//get gpio pin from arg
+const PIN = process.env.npm_config_pin;
+console.log(PIN);
+
 //Async gpio
 const setupAsync = promisify(gpio.setup);
 const writeAsync = promisify(gpio.write);
@@ -25,9 +30,8 @@ gpio.on('change', async (channel, value) => {
 //Untested
 //initialize foot switch
 async function initFootSwitch() {
-    console.log(gpio);
     try {
-        await setupAsync(17, gpio.DIR_IN);
+        await setupAsync(PIN, gpio.DIR_IN);
         console.log("GPIO: Foot switch initialized");
     } catch (error) {
         console.log("Error initializing foot switch");
