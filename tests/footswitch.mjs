@@ -2,10 +2,19 @@
 import gpio from "rpi-gpio";
 import { promisify } from "util";
 
+//pin from arg
+const args = process.argv.slice(2);
+let PIN = 17;
 
-//get gpio pin from arg
-const PIN = process.env.npm_config_pin;
-console.log(PIN);
+// Check if there are arguments
+if (args.length === 0) {
+    console.log('No arguments provided.');
+    let PIN = args[0];
+} else {
+    // Output the provided arguments
+    console.log('Arguments:', args);
+}
+
 
 //Async gpio
 const setupAsync = promisify(gpio.setup);
