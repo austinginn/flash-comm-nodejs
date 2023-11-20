@@ -5,6 +5,7 @@ import { promisify } from "util";
 const args = process.argv.slice(2);
 let PIN = 17;
 
+
 // Check if there are arguments
 if (args.length === 0) {
     console.log('No arguments provided.');
@@ -14,8 +15,11 @@ if (args.length === 0) {
     console.log('Arguments:', args);
 }
 
+console.log(PIN);
 
 const button = new Gpio(PIN, 'in', 'both');
+
+console.log(button);
 
 button.watch((err, value) => {
     if (err) {
